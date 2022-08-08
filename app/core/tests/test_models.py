@@ -54,3 +54,13 @@ class ModalTests(TestCase):
         )
 
         self.assertEqual(str(tag), tag.name)
+
+    def test_ingredients_str(self):
+        """Test the ingredients string representation"""
+
+        ingredients = models.Ingredient.objects.create(
+            user=sample_user(),
+            name='Cucumber'
+        )
+
+        self.assertEqual(str(ingredients), ingredients.name)
